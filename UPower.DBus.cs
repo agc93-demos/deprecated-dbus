@@ -10,7 +10,7 @@ namespace UPower.DBus
     [DBusInterface("org.freedesktop.UPower")]
     interface IUPower : IDBusObject
     {
-        Task<ObjectPath[]> EnumerateDevicesAsync();
+        Task<IDevice[]> EnumerateDevicesAsync();
         Task<ObjectPath> GetDisplayDeviceAsync();
         Task<string> GetCriticalActionAsync();
         Task<IDisposable> WatchDeviceAddedAsync(Action<ObjectPath> handler, Action<Exception> onError = null);
